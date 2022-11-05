@@ -1,0 +1,39 @@
+ncmpcpp_directory = "~/.config/ncmpcpp"
+lyrics_directory = "~/.local/share/lyrics"
+mpd_music_dir = "~/media/music"
+visualizer_type = "spectrum"
+
+connected_message_on_startup = "no"
+user_interface = "classic"
+display_bitrate = "yes"
+display_volume_level = "no"
+
+song_status_format = "$b$3{%A}|{%a} - %t(%b)$/b"
+player_state_color = "red"
+statusbar_color = "red"
+window_border_color = "cyan"
+active_window_border = "red"
+main_window_color = "green"
+header_window_color = "red"
+mouse_support = "no"
+progressbar_look= "->"
+song_list_format = "$5{%a}|{%A} - %t"
+song_library_format = "%t"
+current_item_prefix = "$r"
+current_item_suffix= "$/r"
+current_item_inactive_column_prefix=""
+current_item_inactive_column_suffix=""
+
+playlist_display_mode = "columns"
+browser_display_mode = "columns"
+search_engine_display_mode = "columns"
+playlist_editor_display_mode = "columns"
+
+now_playing_prefix = "$(red)>$(end)    $b"
+now_playing_suffix = "$/b"
+
+song_columns_list_format = "(40)[green]{t} (20)[green]{b} (30)[green]{a} (10)[green]{l}"
+color1= "red"
+color2= "magenta"
+
+enable_window_title = no

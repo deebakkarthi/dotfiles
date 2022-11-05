@@ -1,0 +1,30 @@
+[global]
+    monitor = 0
+    follow = none
+    width = 370
+    height = 350
+    origin = top-right
+    offset = 10x30
+    padding = 2
+    horizontal_padding = 2
+    transparency = 0
+    font = Monospace 12
+    format = "<b>%s</b>\n%b"
+    frame_color = "#bbbbbb"
+
+[urgency_low]
+    background = "#005577"
+    foreground = "#eeeeee"
+    timeout = 3
+
+[urgency_normal]
+    background = "#005577"
+    foreground = "#eeeeee"
+    timeout = 5
+
+[urgency_critical]
+    background = "#1cc24d"
+    foreground = "#ebdbb2"
+    frame_color = "#fabd2f"
+    timeout = 10
+
