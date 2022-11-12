@@ -9,10 +9,13 @@ if __name__ == "__main__":
 
     weight = df["weight"]
     average = weight.rolling(window=7).mean()
+    lines = weight.index[::7]
 
-    plt.plot(df["weight"], marker="o", label="Weight")
+    plt.plot(weight, marker="o", label="Weight")
     plt.plot(average, linestyle="dashed", color="r", label="7 Day average",
              marker="o")
+    plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
+               color="g")
     
     plt.ylabel("Weight(kgs)")
     plt.xlabel("Date")
