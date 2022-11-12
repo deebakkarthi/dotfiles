@@ -1,0 +1,3 @@
+#!/bin/sh
+curr_date=$(date +"%Y-%m-%d")
+printf "%s,%.2f\n" $curr_date $1 >> ~/.local/share/weight/weight.csv

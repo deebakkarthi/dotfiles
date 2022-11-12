@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+import matplotlib.pyplot as plt
+import pandas as pd
+
+if __name__ == "__main__":
+    df = pd.read_csv("~/.local/share/weight/weight.csv")
+    df["date"] = pd.to_datetime(df["date"])
+    df.set_index("date", drop=True, inplace=True)
+
+    weight = df["weight"]
+    average = weight.rolling(window=7).mean()
+
+    plt.plot(df["weight"], marker="o", label="Weight")
+    plt.plot(average, linestyle="dashed", color="r", label="7 Day average",
+             marker="o")
+    
+    plt.ylabel("Weight(kgs)")
+    plt.xlabel("Date")
+    plt.xticks(rotation="vertical")
+    plt.grid(linestyle=":")
+    plt.legend()
+    plt.show()
