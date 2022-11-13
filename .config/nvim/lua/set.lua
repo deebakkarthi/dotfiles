@@ -22,6 +22,7 @@ vim.opt.wildmenu = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
 
+
 vim.g.mapleader = ' '
 
 vim.g.netrw_browse_split = '0'

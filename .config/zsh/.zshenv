@@ -1,5 +1,7 @@
 #!/bin/zsh
-export PATH="$PATH:$HOME/.local/bin"
+export PLAN9="/usr/local/plan9"
+
+export PATH="$PATH:$PLAN9/bin:$HOME/.local/bin"
 
 export EDITOR="nvim"
 export VISUAL="nvim"

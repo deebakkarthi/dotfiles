@@ -5,7 +5,8 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
-  use 'gruvbox-community/gruvbox'
+	use 'wbthomason/packer.nvim'
+	use 'gruvbox-community/gruvbox'
+	use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 end)
 
