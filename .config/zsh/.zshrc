@@ -1,5 +1,5 @@
 #!/bin/zsh
-PROMPT='%F{red}%n@%m: %3~ %# %f'
+PROMPT='[%n@%m]%3~ %# '
 
 autoload -U compinit
 zstyle ':completion:*' menu select
