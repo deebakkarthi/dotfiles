@@ -11,11 +11,13 @@ if __name__ == "__main__":
     average = weight.rolling(window=7).mean()
     lines = weight.index[::7]
 
-    plt.plot(weight, marker="o", label="Weight")
-    plt.plot(average, linestyle="dashed", color="r", label="7 Day average",
+    plt.style.use("dark_background")
+
+    plt.plot(weight, marker="o", label="Weight", color="tab:green")
+    plt.plot(average, linestyle="dashed", color="tab:red", label="7 Day average",
              marker="o")
     plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
-               color="g")
+               color="tab:blue")
     
     plt.ylabel("Weight(kgs)")
     plt.xlabel("Date")
