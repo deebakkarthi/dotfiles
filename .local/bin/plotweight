@@ -2,6 +2,7 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
+
 if __name__ == "__main__":
     df = pd.read_csv("~/.local/share/weight/weight.csv")
     df["date"] = pd.to_datetime(df["date"])
@@ -12,15 +13,21 @@ if __name__ == "__main__":
     lines = weight.index[::7]
 
     plt.style.use("dark_background")
-
-    plt.plot(weight, marker="o", label="Weight", color="tab:green")
-    plt.plot(average, linestyle="dashed", color="tab:red", label="7 Day average",
-             marker="o")
+    fig, ax = plt.subplots(figsize=(12,8))
     plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
                color="tab:blue")
-    
+    plt.plot(weight, marker=".", label="Weight", color="tab:green",
+            linestyle="dashed")
+    plt.plot(average, color="tab:red", label="7 Day average",
+             marker=".")
+    # Adds the weight as label to the point.
+    # Excluding the first 6 point as they don't have an average
+    for k,v in zip(average.index[6:],average[6:]):
+        ax.text(k,v,f"{v:.1f}",size=8,color="w")
+
     plt.ylabel("Weight(kgs)")
     plt.xlabel("Date")
     plt.xticks(rotation="vertical")
     plt.legend()
+
     plt.show()

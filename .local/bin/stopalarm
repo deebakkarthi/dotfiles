@@ -1,3 +1,6 @@
 #!/bin/sh
-
+file=mktemp
+gpg -o $file -d ~/.local/share/alarm/alarm.gpg
+nsxiv $file
+rm $file
 nsxiv ~/.local/share/barcode.gif
