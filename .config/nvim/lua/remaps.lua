@@ -4,11 +4,23 @@ local function map(m, k, v, opts)
 	vim.keymap.set(m, k, v, options, opts)
 end
 
-map('n','<Leader>h','<cmd>wincmd h<CR>')
-map('n','<Leader>j','<cmd>wincmd j<CR>')
-map('n','<Leader>k','<cmd>wincmd k<CR>')
-map('n','<Leader>l','<cmd>wincmd l<CR>')
-map('n','<Leader>pv','<cmd>wincmd v<CR><cmd>Ex<CR>')
-map('n','<Leader>+','<cmd>vertical resize +5<CR>')
-map('n','<Leader>-','<cmd>vertical resize -5<CR>')
-map('n','<Leader>m','<cmd>!make<CR>')
+map('n','<leader>h','<cmd>wincmd h<CR>')
+map('n','<leader>j','<cmd>wincmd j<CR>')
+map('n','<leader>k','<cmd>wincmd k<CR>')
+map('n','<leader>l','<cmd>wincmd l<CR>')
+map('n','<leader>pv',vim.cmd.Ex)
+map('n','<leader>+','<cmd>vertical resize +5<CR>')
+map('n','<leader>-','<cmd>vertical resize -5<CR>')
+map('n','<leader>m','<cmd>!make<CR>')
+map("n", "J", "mzJ`z") -- Cursor doesn't move when using J to move line from below
+map("x", "<leader>p", "\"_dP") -- Preserve the text in cut buf
+
+-- Yank to system's clipboard
+map("n", "<leader>y", "\"+y")
+map("v", "<leader>y", "\"+y")
+map("v", "<leader>Y", "\"+Y")
+
+-- Use delete without losing the text in cut buf
+map("n", "<leader>d", "\"_d")
+map("v", "<leader>d", "\"_d")
+map("n", "Q", "<nop>")

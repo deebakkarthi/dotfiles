@@ -16,12 +16,11 @@ vim.opt.backup = true
 vim.opt.undofile = true
 
 vim.opt.colorcolumn = '80'
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.signcolumn = "yes"
 vim.opt.cmdheight = 2
 vim.opt.wildmenu = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
-
 
 vim.g.mapleader = ' '
 
