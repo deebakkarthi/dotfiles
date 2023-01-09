@@ -7,12 +7,11 @@ if __name__ == "__main__":
     df = pd.read_csv("~/.local/share/weight/weight.csv")
     df["date"] = pd.to_datetime(df["date"])
     df.set_index("date", drop=True, inplace=True)
-
+    
     weight = df["weight"]
     average = weight.rolling(window=7).mean()
     lines = weight.index[::7]
 
-    plt.style.use("dark_background")
     fig, ax = plt.subplots(figsize=(12,8))
     plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
                color="tab:blue")
