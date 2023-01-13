@@ -1,7 +1,7 @@
 #!/bin/zsh
 export PLAN9="/usr/local/plan9"
 
-export PATH="$PATH:$PLAN9/bin:$HOME/.local/bin"
+export PATH="$PATH:$PLAN9/bin:$HOME/.local/bin:$HOME/.emacs.d/bin/"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -16,5 +16,3 @@ export KODI_DATA="$XDG_DATA_HOME/kodi"
 
 export COLLEGEDIR="$HOME/college/junior/semester_5"
 export TIMEWARRIORDB="$XDG_CONFIG_HOME/timewarrior"
-
-export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
