@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # Adds the weight as label to the point.
     # Excluding the first 6 point as they don't have an average
     for k,v in zip(average.index[6:],average[6:]):
-        ax.text(k,v,f"{v:.1f}",size=8,color="w")
+        ax.text(k,v,f"{v:.1f}",size=8,color="r")
 
     plt.ylabel("Weight(kgs)")
     plt.xlabel("Date")
