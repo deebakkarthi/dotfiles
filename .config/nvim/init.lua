@@ -97,8 +97,13 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 -- Set highlight on search
 vim.o.hlsearch = false
 
+vim.opt.colorcolumn = '80'
+
 -- Make line numbers default
 vim.wo.number = true
+
+-- Set no wrap
+vim.wo.wrap = false
 
 -- Enable mouse mode
 vim.o.mouse = nil

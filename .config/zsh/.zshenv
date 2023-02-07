@@ -16,3 +16,4 @@ export KODI_DATA="$XDG_DATA_HOME/kodi"
 
 export COLLEGEDIR="$HOME/college/junior/semester_5"
 export TIMEWARRIORDB="$XDG_CONFIG_HOME/timewarrior"
+. "$HOME/.cargo/env"
