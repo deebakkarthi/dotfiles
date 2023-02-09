@@ -1,2 +1,10 @@
 #!/bin/sh
-nsxiv ~/.local/share/barcode.gif
+file=mktemp
+if [ -z "$1" ]
+then
+	gpg -o $file -d ~/.local/share/alarm/alarm.gpg > /dev/null 2>&1
+	nsxiv ~/.local/share/alarm/barcode.gif $file
+	rm $file
+else
+	nsxiv ~/.local/share/alarm/barcode.gif
+fi
