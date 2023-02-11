@@ -4,3 +4,4 @@
 application/pdf=org.pwmt.zathura.desktop
 image/jpeg=nsxiv.desktop;
 image/png=nsxiv.desktop;
+image/gif=nsxiv.desktop;
