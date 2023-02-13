@@ -14,6 +14,6 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME/passwd"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export KODI_DATA="$XDG_DATA_HOME/kodi"
 
-export COLLEGEDIR="$HOME/college/junior/semester_5"
+export COLLEGEDIR="$HOME/college/junior/semester_6"
 export TIMEWARRIORDB="$XDG_CONFIG_HOME/timewarrior"
 . "$HOME/.cargo/env"
