@@ -4,7 +4,8 @@ set preview true
 
 map a unarchive
 map <a-h> cd
-map <a-o> cd ~/college/junior/semester_5/
+map <a-o> cd ~/college/junior/semester_6
+
 
 cmd bulk-rename ${{
     old="$(mktemp)"

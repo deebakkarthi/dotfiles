@@ -30,10 +30,13 @@ def main():
     
     weight = df["weight"]
     average = weight.rolling(window=7).mean()
+    lines = weight.index[::7]
 
     _, ax = plt.subplots(figsize=(12,8))
-    plt.plot(weight, marker=".", label="Weight", color="tab:blue",
-            linestyle="dashdot")
+    plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
+               color="tab:blue")
+    plt.plot(weight, marker=".", label="Weight", color="tab:green",
+             linestyle="dashdot")
     plt.plot(average, color="tab:red", label="7 Day average",
              marker="o")
     # Adds the weight as label to the point.

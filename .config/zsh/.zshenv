@@ -1,7 +1,5 @@
 #!/bin/zsh
-export PLAN9="/usr/local/plan9"
-
-export PATH="$PATH:$PLAN9/bin:$HOME/.local/bin:$HOME/.emacs.d/bin/"
+export PATH="$HOME:/.cargo/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -16,4 +14,3 @@ export KODI_DATA="$XDG_DATA_HOME/kodi"
 
 export COLLEGEDIR="$HOME/college/junior/semester_6"
 export TIMEWARRIORDB="$XDG_CONFIG_HOME/timewarrior"
-. "$HOME/.cargo/env"
