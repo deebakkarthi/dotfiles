@@ -1,4 +1,3 @@
-
 (setq inhibit-startup-message t)
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -32,6 +31,7 @@
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
                          ("org" . "https://orgmode.org/elpa/")
                          ("elpa" . "https://elpa.gnu.org/packages/")))
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3") ;; w/o this Emacs freezes when refreshing ELPA
 
 (package-initialize)
 (unless package-archive-contents
@@ -110,7 +110,7 @@
 (use-package org-roam
   :ensure t
   :custom
-  (org-roam-directory "~/docs/org")
+  (org-roam-directory "~/.local/share/emacs/org")
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ("C-c n f" . org-roam-node-find)
@@ -119,3 +119,9 @@
 	 ("C-M-i" . completion-at-point))
   :config
   (org-roam-setup))
+
+(use-package ox-hugo
+  :ensure t   ;Auto-install the package from Melpa
+  :pin melpa  ;`package-archives' should already have ("melpa" . "https://melpa.org/packages/")
+  :after ox)
+
