@@ -1,5 +1,5 @@
 #!/bin/zsh
-export PATH="$HOME:/.cargo/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.ghcup/bin:$HOME/.cabal/bin:$HOME/.local/bin:$PATH"
 
 export EDITOR="nvim"
 export VISUAL="nvim"

@@ -109,8 +109,9 @@
 
 (use-package org-roam
   :ensure t
+  :init
+  (setq org-roam-directory "~/.local/share/emacs/roam/org")
   :custom
-  (org-roam-directory "~/.local/share/emacs/org")
   (org-roam-completion-everywhere t)
   :bind (("C-c n l" . org-roam-buffer-toggle)
 	 ("C-c n f" . org-roam-node-find)
