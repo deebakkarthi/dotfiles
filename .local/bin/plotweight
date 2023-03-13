@@ -30,7 +30,7 @@ def main():
     
     weight = df["weight"]
     average = weight.rolling(window=7).mean()
-    lines = weight.index[::7]
+    lines = weight.index[weight.index.weekday == 0]
 
     _, ax = plt.subplots(figsize=(12,8))
     plt.vlines(lines, weight.min(), weight.max(), linestyle="dashdot",
