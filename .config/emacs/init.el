@@ -97,8 +97,14 @@
   :config
   (evil-collection-init))
 
+(defun dbk/org-mode-setup ()
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-line-mode 1))
+
 
 (use-package org
+  :hook (org-mode . dbk/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"))
 
@@ -125,4 +131,11 @@
   :ensure t   ;Auto-install the package from Melpa
   :pin melpa  ;`package-archives' should already have ("melpa" . "https://melpa.org/packages/")
   :after ox)
+ 
+(defun dbk/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
 
+(use-package visual-fill-column
+  :hook (org-mode . dbk/org-mode-visual-fill))
