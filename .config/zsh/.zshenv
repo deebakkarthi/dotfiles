@@ -18,3 +18,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export KODI_DATA="$XDG_DATA_HOME/kodi"
+
+if [[ "$OSTYPE" == "darwin"* ]];then
+    export CPATH="/opt/homebrew/include/"
+fi
