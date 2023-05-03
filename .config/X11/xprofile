@@ -4,6 +4,4 @@ setbg &
 xcompmgr &
 dunst &
 redshift &
-setxkbmap -option caps:swapescape &
 xrdb -merge ~/.config/X11/Xresources &
-xset r rate 300 50 &

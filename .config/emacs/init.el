@@ -11,7 +11,7 @@
 (load custom-file)
 
 (add-to-list 'default-frame-alist
-	     '(font . "JetBrains Mono-18"))
+	     '(font . "UbuntuMono Nerd Font Mono-20"))
 
 (column-number-mode)
 (global-display-line-numbers-mode t)
@@ -51,6 +51,23 @@
   :config
   (ivy-mode 1))
 
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+         ("C-x b" . counsel-ibuffer)
+         ("C-x C-f" . counsel-find-file)
+         :map minibuffer-local-map
+         ("C-r" . 'counsel-minibuffer-history)))
+
+(use-package helpful
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-variable)
+  ([remap describe-key] . helpful-key))
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -69,6 +86,14 @@
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package which-key
+  :init (which-key-mode)
+  :diminish which-key-mode
+  :config
+  (setq which-key-idle-delay 1))
 
 (use-package ivy-rich
   :config
@@ -97,12 +122,47 @@
   :config
   (evil-collection-init))
 
+(defun dbk/org-mode-setup()
+  (org-indent-mode)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil))
+
 (use-package org
+  :hook (org-mode . dbk/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"))
-
 
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
 (require 'org-tempo)
+
+(use-package org-roam
+  :ensure t
+  :custom
+  (org-roam-directory "~/.local/share/emacs/org-roam")
+  (org-roam-completion-everywhere t)
+  (org-roam-dailies-capture-templates
+    '(("d" "default" entry "* %<%I:%M %p>: %?"
+       :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+  :bind (
+	 ("C-c n l" . org-roam-buffer-toggle)
+	 ("C-c n f" . org-roam-node-find)
+	 ("C-c n i" . org-roam-node-insert)
+	 :map org-mode-map
+	 ("C-M-i" . completion-at-point)
+	 )
+  :bind-keymap
+  ("C-c n d" . org-roam-dailies-map)
+  :config
+  (require 'org-roam-dailies)
+  (org-roam-setup))
+
+(defun dbk/org-mode-visual-fill ()
+  (setq visual-fill-column-width 100
+	visual-fill-column-center-text t)
+  (visual-fill-column-mode 1))
+
+(use-package visual-fill-column
+  :defer t
+  :hook (org-mode . dbk/org-mode-visual-fill))
