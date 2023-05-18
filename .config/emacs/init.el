@@ -24,6 +24,9 @@
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+(global-set-key (kbd "C-c l") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
 
 ;; Initialize package sources
 (require 'package)
@@ -130,7 +133,8 @@
 (use-package org
   :hook (org-mode . dbk/org-mode-setup)
   :config
-  (setq org-ellipsis " ▾"))
+  (setq org-ellipsis " ▾")
+  (setq org-startup-with-inline-images t))
 
 (use-package org-bullets
   :after org
@@ -166,3 +170,10 @@
 (use-package visual-fill-column
   :defer t
   :hook (org-mode . dbk/org-mode-visual-fill))
+
+(use-package org-download)
+
+;; Drag-and-drop to `dired`
+(add-hook 'dired-mode-hook 'org-download-enable)
+
+(setq org-agenda-files `("~/.local/share/emacs/agenda"))

@@ -56,4 +56,6 @@ return require("packer").startup(function(use)
     }
 
     use "vimwiki/vimwiki"
+
+    use 'nvim-tree/nvim-web-devicons'
 end)

@@ -1,4 +1,3 @@
-local lspkind = require "lspkind"
 local cmp = require "cmp"
 cmp.setup({
     snippet = {
@@ -38,7 +37,7 @@ cmp.setup({
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-            local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 25})(entry, vim_item)
+            local kind = require("lspkind").cmp_format({ mode = "symbol_text", maxwidth = 25 })(entry, vim_item)
             local strings = vim.split(kind.kind, "%s", { trimempty = true })
             kind.kind = " " .. (strings[1] or "") .. " "
             kind.menu = "    (" .. (strings[2] or "") .. ")"

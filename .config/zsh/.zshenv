@@ -22,6 +22,11 @@ export MOZILLA_CONFIG="$XDG_CONFIG_HOME/mozilla"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 
+# Java
+export AWT_TOOLKIT=MToolkit
+export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_OPTIONS="-Dawt.useSystemAAFontSettings=on"
+
 if [[ "$OSTYPE" == "darwin"* ]];then
     export CPATH="/opt/homebrew/include/"
 fi

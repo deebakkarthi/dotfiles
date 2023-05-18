@@ -1,2 +1,2 @@
 #!/bin/sh
-nsxiv ~/.local/share/alarm/alarm.jpg ~/.local/share/alarm/barcode.gif 
+nsxiv ~/.local/share/alarm/alarm.jpg ~/.local/share/alarm/barcode.gif
