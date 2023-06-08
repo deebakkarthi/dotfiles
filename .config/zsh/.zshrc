@@ -48,3 +48,5 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 #Check for alias file
 . $ZDOTDIR/aliasrc && source $ZDOTDIR/aliasrc
+
+[ -f "/home/dbk/.local/share/ghcup/env" ] && source "/home/dbk/.local/share/ghcup/env" # ghcup-env

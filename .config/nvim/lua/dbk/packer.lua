@@ -58,4 +58,6 @@ return require("packer").startup(function(use)
     use "vimwiki/vimwiki"
 
     use 'nvim-tree/nvim-web-devicons'
+
+    use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 end)
