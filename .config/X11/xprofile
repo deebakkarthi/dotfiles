@@ -4,4 +4,5 @@ setbg &
 xcompmgr &
 dunst &
 redshift &
+flameshot &
 xrdb -merge ~/.config/X11/Xresources &
