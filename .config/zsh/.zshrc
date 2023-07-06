@@ -1,5 +1,4 @@
 #!/bin/zsh
-
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -46,7 +45,4 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-#Check for alias file
 . $ZDOTDIR/aliasrc && source $ZDOTDIR/aliasrc
-
-[ -f "/home/dbk/.local/share/ghcup/env" ] && source "/home/dbk/.local/share/ghcup/env" # ghcup-env
