@@ -1,3 +1,2 @@
 #!/bin/sh
-[ -f ~/.config/X11/xprofile ] && . ~/.config/X11/xprofile
-exec dwm
+exec i3
