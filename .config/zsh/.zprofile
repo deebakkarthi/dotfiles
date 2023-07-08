@@ -1,4 +1,13 @@
 #!/bin/zsh
+case $OSTYPE in
+        darwin*)
+	eval $(/opt/homebrew/bin/brew shellenv)
+	;;
+*)
+        echo "ohter"
+esac
+
+PATH="$PATH:$HOME/.local/usr/bin:$HOME/.local/bin"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
