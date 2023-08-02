@@ -22,6 +22,7 @@ PROMPT='[%n@%m]%3~ %# '
 bindkey -v
 export KEYTIMEOUT=1
 
+
 # Use vim keys in tab complete menu:
 bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
@@ -46,3 +47,20 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 . $ZDOTDIR/aliasrc && source $ZDOTDIR/aliasrc
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/deebakkarthi/.local/share/conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/deebakkarthi/.local/share/conda/etc/profile.d/conda.sh" ]; then
+        . "/Users/deebakkarthi/.local/share/conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/deebakkarthi/.local/share/conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

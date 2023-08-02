@@ -28,5 +28,5 @@ bind pager l view-attachments
 
 bind index,pager \Ck sidebar-prev
 bind index,pager \Cj sidebar-next
-bind index,pager \Co sidebar-open
+bind index,pager \Cl sidebar-open
 bind index,pager B sidebar-toggle-visible
