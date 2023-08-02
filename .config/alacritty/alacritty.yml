@@ -23,7 +23,3 @@ scrolling:
 
 import:
   - ~/.config/alacritty/rose-pine.yml
-
-key_bindings:
-  - { key: V,         mods: Alt, action: Paste                       }
-  - { key: C,         mods: Alt, action: Copy                        }

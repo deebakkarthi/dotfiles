@@ -22,7 +22,6 @@ set scrolloff 10
 
 set drawbox
 set preview true
-set cleaner '~/.config/lf/cleaner'
 set previewer '~/.config/lf/scope'
 
 map a unarchive

@@ -46,8 +46,10 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-. $ZDOTDIR/aliasrc && source $ZDOTDIR/aliasrc
+export SAVEHIST=0
+export HISTFILE=0
 
+. $ZDOTDIR/aliasrc && source $ZDOTDIR/aliasrc
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -63,4 +65,3 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
