@@ -19,6 +19,8 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
+export NLTK_DATA="$XDG_DATA_HOME/nltk_data/"
+
 
 case $OSTYPE in
     darwin*)
