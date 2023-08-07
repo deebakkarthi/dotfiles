@@ -27,6 +27,8 @@ set previewer '~/.config/lf/scope'
 map a unarchive
 map <a-h> cd
 map <a-o> cd ~/college/senior/semester_7/
+map <a-s> cd "~/Documents/Google Drive/sb/"
+map <a-a> sb_archive
 
 cmd bulkrename ${{
     tmpfile_old="$(mktemp)"
@@ -59,3 +61,7 @@ cmd unarchive ${{
   esac
 }}
 
+
+cmd sb_archive ${{
+    mv "$f" "$HOME/Documents/Google Drive/sb/04_archive/"
+}}

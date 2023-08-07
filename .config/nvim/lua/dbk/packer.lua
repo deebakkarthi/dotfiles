@@ -54,10 +54,5 @@ return require("packer").startup(function(use)
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     }
-
-    use "vimwiki/vimwiki"
-
     use 'nvim-tree/nvim-web-devicons'
-
-    use({ 'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" } })
 end)

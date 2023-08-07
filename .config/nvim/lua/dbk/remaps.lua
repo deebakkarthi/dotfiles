@@ -17,3 +17,4 @@ vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
 
+vim.keymap.set("n","<leader>d", "\"=strftime('%FT%T%z')<CR>P")
