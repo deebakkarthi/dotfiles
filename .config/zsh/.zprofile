@@ -21,7 +21,6 @@ export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 
 export NLTK_DATA="$XDG_DATA_HOME/nltk_data/"
 
-
 case $OSTYPE in
     darwin*)
         eval $(/opt/homebrew/bin/brew shellenv)

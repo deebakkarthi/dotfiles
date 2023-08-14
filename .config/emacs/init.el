@@ -141,27 +141,6 @@
   :hook (org-mode . org-bullets-mode))
 (require 'org-tempo)
 
-(use-package org-roam
-  :ensure t
-  :custom
-  (org-roam-directory "~/.local/share/emacs/org-roam")
-  (org-roam-completion-everywhere t)
-  (org-roam-dailies-capture-templates
-    '(("d" "default" entry "* %<%I:%M %p>: %?"
-       :if-new (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
-  :bind (
-	 ("C-c n l" . org-roam-buffer-toggle)
-	 ("C-c n f" . org-roam-node-find)
-	 ("C-c n i" . org-roam-node-insert)
-	 :map org-mode-map
-	 ("C-M-i" . completion-at-point)
-	 )
-  :bind-keymap
-  ("C-c n d" . org-roam-dailies-map)
-  :config
-  (require 'org-roam-dailies)
-  (org-roam-setup))
-
 (defun dbk/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
 	visual-fill-column-center-text t)
@@ -170,10 +149,3 @@
 (use-package visual-fill-column
   :defer t
   :hook (org-mode . dbk/org-mode-visual-fill))
-
-(use-package org-download)
-
-;; Drag-and-drop to `dired`
-(add-hook 'dired-mode-hook 'org-download-enable)
-
-(setq org-agenda-files `("~/.local/share/emacs/agenda"))
