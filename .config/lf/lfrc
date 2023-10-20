@@ -28,7 +28,8 @@ map a unarchive
 map <a-h> cd
 map <a-o> cd ~/college/senior/semester_7/
 map <a-s> cd "~/Documents/Google Drive/sb/"
-map <a-a> sb_archive
+map <a-a> mv_archive 
+map D mv_trash
 
 cmd bulkrename ${{
     tmpfile_old="$(mktemp)"
@@ -62,6 +63,10 @@ cmd unarchive ${{
 }}
 
 
-cmd sb_archive ${{
-    mv "$f" "$HOME/Documents/Google Drive/sb/04_archive/"
+cmd mv_archive ${{
+    mv "$f" "$HOME/.archive/"
+}}
+
+cmd mv_trash ${{
+    mv "$f" "$HOME/.Trash/"
 }}
